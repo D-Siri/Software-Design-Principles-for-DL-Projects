@@ -3,8 +3,8 @@ import numpy as np
 from mnist_loader import MNISTLoader
 from mnist_visualizer import MNISTVisualizer
 from data_preprocessor import DataPreprocessor
-from nn_model import NNModel
-from cnn_model import CNNModel
+from models.nn_model import NNModel
+from models.cnn_model import CNNModel
 from model_evaluator import ModelEvaluator
 
 

@@ -1,6 +1,6 @@
 import time
 import numpy as np
-from nn_model import NNModel  # Assuming this is the module containing your neural network model
+from models.nn_model import NNModel  # Assuming this is the module containing your neural network model
 
 class TestModelPerformance:
     def setUp(self):
