@@ -8,6 +8,9 @@ from models.cnn_model import CNNModel
 from model_evaluator import ModelEvaluator
 
 
+
+
+
 class TestMNISTLoader(unittest.TestCase):
     def setUp(self):
         self.mnist_loader = MNISTLoader()
