@@ -16,19 +16,29 @@ class TestModelFunctionality(unittest.TestCase):
         # Initialize the model
         self.model = NNModel(self.X_train, self.y_train, self.X_test, self.y_test)
         self.model_evaluator = ModelEvaluator(self.model, self.X_test, self.y_test)
+
     def test_train_model(self):
         # Test model training
         self.model.train(epochs=2, batch_size=32)
         # Assert that the model has been trained (you may add more specific assertions here)
+        self.assertIsNotNone(self.model)
 
     def test_predict(self):
         # Test model prediction
         predictions = self.model.predict(self.X_test)
         # Assert that predictions have been made and have the correct shape/content (you may add more specific assertions here)
+        self.assertIsNotNone(predictions)
+        self.assertEqual(predictions.shape[0], self.X_test.shape[0])
 
     def test_evaluate(self):
         # Test model evaluation
-        accuracy, precision, recall, f1, loss = self.model_evaluator.evaluate_model()        # Assert that evaluation metrics have been calculated and have reasonable values (you may add more specific assertions here)
+        accuracy, precision, recall, f1, loss = self.model_evaluator.evaluate_model()
+        # Assert that evaluation metrics have been calculated and have reasonable values (you may add more specific assertions here)
+        self.assertIsNotNone(accuracy)
+        self.assertIsNotNone(precision)
+        self.assertIsNotNone(recall)
+        self.assertIsNotNone(f1)
+        self.assertIsNotNone(loss)
 
 
 if __name__ == '__main__':
